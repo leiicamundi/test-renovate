@@ -274,7 +274,7 @@
       'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: release-(?<currentValue>.*)',
     ],
     versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}loose{{/if}}',
-   }
+   },
    {
       customType: 'regex',
       fileMatch: [
