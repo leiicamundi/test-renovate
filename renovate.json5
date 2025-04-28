@@ -255,13 +255,6 @@
       ],
       versioning: 'regex:^camunda-platform(-\\d+\\.\\d+)?-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$',
     },
-    {
-      description: 'Update ACM Subscription channel using custom.openshift-acm',
-      matchPackageNames: [
-        'red-hat-openshift-acm',
-      ],
-      versioning: 'regex:^release-(?<major>\\d+)(\\.(?<minor>\\d+))$',
-    },
   ],
   'customDatasources': {
     'rosa-camunda': {
