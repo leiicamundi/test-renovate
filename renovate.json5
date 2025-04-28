@@ -271,6 +271,7 @@
     'openshift-acm': {
       'defaultRegistryUrlTemplate': 'https://camunda.github.io/camunda-deployment-references/openshift_acm_versions.txt',
       'format': 'plain',
+      'versioning': 'loose',
     },
   },
   customManagers: [
