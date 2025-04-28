@@ -5,7 +5,7 @@ metadata:
     name: advanced-cluster-management
     namespace: open-cluster-management
 spec:
-    # renovate: datasource=custom.openshift-acm
+    # renovate: datasource=custom.openshift-acm depName=red-hat-openshift-acm
     channel: release-2.12
     installPlanApproval: Automatic
     name: advanced-cluster-management
