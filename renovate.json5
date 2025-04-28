@@ -270,7 +270,7 @@
    {
     customType: 'regex',
     matchStrings: [
-      'datasource=custom.openshift-acm depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: release-(?<currentValue>.*)',
+      'datasource=custom\.openshift-acm depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: release-(?<currentValue>.*)',
     ],
     versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}loose{{/if}}',
    },
