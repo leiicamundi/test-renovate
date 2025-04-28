@@ -8,7 +8,9 @@ spec:
     # renovate: datasource=custom.openshift-acm depName=red-hat-openshift-acm versioning=loose
     channel: release-2.12
     # renovate: datasource=custom.openshift-acm depName=red-hat-openshift-acm
-    version: 2.12
+    version: 2.12    
+    # renovate: datasource=custom.openshift-acm depName=red-hat-openshift-acm versioning=loose
+    version-loose: 2.12
     # renovate: datasource=custom.openshift-acm depName=red-hat-openshift-acm
     version-no: 2.12.2
     installPlanApproval: Automatic
