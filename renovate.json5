@@ -258,7 +258,10 @@
     {
       description: 'Update ACM Subscription channel using custom.openshift-acm',
       matchDatasources: [
-        'custom.openshift-acm',
+        'custom',
+      ],
+      matchPackageNames: [
+        'openshift-acm',
       ],
       versioning: 'regex:^release-(?<major>\\d)(\\.(?<minor>\\d+))$',
     },
