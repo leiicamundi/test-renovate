@@ -269,6 +269,10 @@
   customManagers: [
    {
     customType: 'regex',
+    fileMatch: [
+        '.yaml$',
+        '.yml$',
+    ],
     matchStrings: [
       'datasource=custom\.openshift-acm depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: release-(?<currentValue>.*)',
     ],
