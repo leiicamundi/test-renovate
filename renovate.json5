@@ -242,7 +242,13 @@
       ],
       extractVersion: '^(?<version>.*)-eks.+$',
     },
-      {
+    {
+      matchDatasources: [
+        'custom.openshift-acm',
+      ],
+      extractVersion: '^release-(?<version>.*)+$',
+    },
+    {
       // The versioning is a bit strange, so we need to help a bit with parsing it correctly
       matchPackageNames: [
         'amazon/cloudwatch-agent',
