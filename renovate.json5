@@ -260,14 +260,7 @@
       matchDatasources: [
         'custom.openshift-acm',
       ],
-      matchManagers: [
-        'custom.regex',
-      ],
-      matchStrings: [
-        'channel:\\s*release-(?<currentValue>\\d+\\.\\d+)',
-      ],
-      extractVersion: '^release-(?<version>\\d+\\.\\d+)$',
-      versioning: 'major.minor',
+      versioning: 'regex:^release-(?<major>\\d)(\\.(?<minor>\\d+))$',
     },
   ],
   'customDatasources': {
