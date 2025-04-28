@@ -269,7 +269,7 @@
       'format': 'plain',
     },
     'openshift-acm': {
-      'defaultRegistryUrlTemplate': 'https://camunda.github.io/camunda-deployment-references/openshift_acm_versions.txt',
+      'defaultRegistryUrlTemplate': 'https://raw.githubusercontent.com/leiicamundi/test-renovate/refs/heads/main/openshift_acm_versions.txt',
       'format': 'plain',
     },
   },
