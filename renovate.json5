@@ -268,17 +268,6 @@
   },
   customManagers: [
    {
-    customType: 'regex',
-    fileMatch: [
-        '.yaml$',
-        '.yml$',
-    ],
-    matchStrings: [
-      'datasource=custom\.openshift-acm depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: release-(?<currentValue>.*)',
-    ],
-    versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}loose{{/if}}',
-   },
-   {
       customType: 'regex',
       fileMatch: [
         '.yaml$',
@@ -294,6 +283,7 @@
         'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?=(?:\\s\\.)?(?<currentValue>.*)',
         'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?- (?<currentValue>.*)',
         'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: (?<currentValue>.*)',
+        'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?: release-(?<currentValue>.*)',
         'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?="(?<currentValue>.*)"',
         'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*?-"(?<currentValue>.*)"',
         'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s.*? "(?<currentValue>.*)"',
