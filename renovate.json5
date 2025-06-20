@@ -39,7 +39,7 @@
              "customType": "regex",
              "managerFilePatterns": ["/bases.yaml/"],
              "matchStrings": [
-               "# renovate: datasource=docker depName=(?<depName>[^\\s]+) digest=sha256\\s*name:\\s*(?<depName2>[^:@\\s]+):(?<currentValue>[^@\\s]+)@(?<currentDigest>sha256:[a-f0-9]+)"
+                "\\s+name: (?<depName>.*?)(?::(?<currentValue>.*?))?@(?<currentDigest>sha256:[a-f0-9]+)\\s"
              ],
              "datasourceTemplate": "docker",
              "versioningTemplate": "docker",
