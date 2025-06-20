@@ -37,7 +37,7 @@
   "customManagers": [
            {
              "customType": "regex",
-             "managerFilePatterns": ["/bases.yaml/"],
+             "managerFilePatterns": ["**/bases.yaml"],
              "matchStrings": [
                 "\\s+name: (?<depName>.*?)(?::(?<currentValue>.*?))?@(?<currentDigest>sha256:[a-f0-9]+)\\s"
              ],
