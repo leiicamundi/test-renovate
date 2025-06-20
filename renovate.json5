@@ -3,7 +3,7 @@
   extends: ["github>camunda/infraex-common-config:default.json5"],
   "packageRules": [
     {
-      "matchManagers": ["dockerfile", "custom"],
+      "matchManagers": ["dockerfile"],
       "groupName": "new major keycloak available",
       "groupSlug": "new-major-keycloak",
       "matchDatasources": ["docker"],
@@ -13,7 +13,7 @@
       "addLabels": ["dependencies", "docker", "hold"],
     },
     {
-      "matchManagers": ["dockerfile", "custom"],
+      "matchManagers": ["dockerfile"],
       "groupName": "all non-major keycloak",
       "groupSlug": "all-non-major-keycloak",
       "matchDatasources": ["docker"],
@@ -23,7 +23,7 @@
       "addLabels": ["dependencies", "docker"],
     },
     {
-      "matchManagers": ["dockerfile", "custom"],
+      "matchManagers": ["dockerfile"],
       "matchDatasources": ["docker"],
       "matchFileNames": ["keycloak-*/Dockerfile", "keycloak-*/bases.yml"],
       "matchUpdateTypes": ["major"],
