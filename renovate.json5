@@ -29,6 +29,12 @@
       "matchUpdateTypes": ["major"],
       "enabled": false,
     },
+    {
+      "matchManagers": ["terraform"],
+      "enabled": true,
+      "matchDatasources": ["terraform-provider", "terraform-module"],
+      "versioning": "hashicorp"
+    }
   ],
   // TODO: integrates this into the common-config
   // we will also need to add INFRAEX_CAMUNDA_DOCKER_REGISTRY_PASSWORD
