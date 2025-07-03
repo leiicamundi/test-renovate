@@ -1,6 +1,9 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>camunda/infraex-common-config:default.json5"],
+  "helm-values": {
+    "fileMatch": ["(^|/)base\\.ya?ml$"]
+  },
   "packageRules": [
     {
       "matchManagers": ["dockerfile"],
