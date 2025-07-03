@@ -29,7 +29,8 @@
       "addLabels": ["dependencies", "docker"],
       "matchUpdateTypes": [
         "minor",
-        "patch"
+        "patch",
+        "digest"
       ]
     },
     {
