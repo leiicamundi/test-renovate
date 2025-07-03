@@ -1,48 +1,78 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["github>camunda/infraex-common-config:default.json5"],
-  "helm-values": {
-    "enabled": true,
-    "managerFilePatterns": [
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'github>camunda/infraex-common-config:default.json5',
+  ],
+  'helm-values': {
+    enabled: true,
+    managerFilePatterns: [
       '/(^|/)bases\\.ya?ml$/',
     ],
-    "pinDigest": true,
-  },
-  "packageRules": [
-    {
-      "matchManagers": ["dockerfile"],
-      "groupName": "new major keycloak available",
-      "groupSlug": "new-major-keycloak",
-      "matchDatasources": ["docker"],
-      "matchFileNames": [".watch-latest/Dockerfile*"],
-      "matchUpdateTypes": ["major"],
-      "enabled": true,
-      "addLabels": ["dependencies", "docker", "hold"],
+    pinDigest: {
+      enabled: true,
     },
+  },
+  packageRules: [
     {
-      "matchManagers": ["helm-values"],
-      "matchDatasources": ["docker"],
-      "groupName": "all non-major keycloak",
-      "groupSlug": "all-non-major-keycloak",
-      "matchFileNames": ["keycloak-*/bases.yml"],
-      "enabled": true,
-      "addLabels": ["dependencies", "docker"],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "digest"
+      matchManagers: [
+        'dockerfile',
+      ],
+      groupName: 'new major keycloak available',
+      groupSlug: 'new-major-keycloak',
+      matchDatasources: [
+        'docker',
+      ],
+      matchFileNames: [
+        '.watch-latest/Dockerfile*',
+      ],
+      matchUpdateTypes: [
+        'major',
+      ],
+      enabled: true,
+      addLabels: [
+        'dependencies',
+        'docker',
+        'hold',
       ],
     },
     {
-      "matchManagers": ["helm-values"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["keycloak-*/bases.yml"],
-      "matchUpdateTypes": ["major"],
-      "enabled": false,
+      matchManagers: [
+        'helm-values',
+      ],
+      matchDatasources: [
+        'docker',
+      ],
+      groupName: 'all non-major keycloak',
+      groupSlug: 'all-non-major-keycloak',
+      matchFileNames: [
+        'keycloak-*/bases.yml',
+      ],
+      enabled: true,
+      addLabels: [
+        'dependencies',
+        'docker',
+      ],
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+        'digest',
+      ],
+    },
+    {
+      matchManagers: [
+        'helm-values',
+      ],
+      matchDatasources: [
+        'docker',
+      ],
+      matchFileNames: [
+        'keycloak-*/bases.yml',
+      ],
+      matchUpdateTypes: [
+        'major',
+      ],
+      enabled: false,
     },
   ],
-  // TODO: integrates this into the common-config
-  // we will also need to add INFRAEX_CAMUNDA_DOCKER_REGISTRY_PASSWORD
-  hostRules: [
-  ],
+  hostRules: [],
 }
