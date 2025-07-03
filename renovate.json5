@@ -6,7 +6,9 @@
     "managerFilePatterns": [
       '/(^|/)bases\\.ya?ml$/',
     ],
-    "pinDigest": true,
+    "pinDigest": {
+      enabled: true,
+    }
   },
   "packageRules": [
     {
@@ -30,7 +32,9 @@
       "matchUpdateTypes": [
         "minor",
         "patch",
-        "digest"
+        "digest",
+        "pin",
+        "pinDigest",
       ],
     },
     {
