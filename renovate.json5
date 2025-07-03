@@ -27,13 +27,7 @@
       "matchFileNames": ["keycloak-*/bases.yml"],
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
-    },
-    {
-      "matchManagers": ["helm-values"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["keycloak-*/bases.yml"],
-      "matchUpdateTypes": ["major"],
-      "enabled": false,
+      "allowedVersionChange": "minor"
     },
     {
       "matchManagers": ["terraform"],
