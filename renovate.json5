@@ -33,6 +33,7 @@
       "matchFileNames": ["keycloak-*/bases.yml"],
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
+      "pinDigest": true,
       "matchUpdateTypes": [
         "minor",
         "patch",
