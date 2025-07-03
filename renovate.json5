@@ -21,6 +21,7 @@
     },
     {
       "matchManagers": ["helm-values"],
+      "matchDatasources": ["docker"],
       "groupName": "all non-major keycloak",
       "groupSlug": "all-non-major-keycloak",
       "matchFileNames": ["keycloak-*/bases.yml"],
@@ -29,6 +30,7 @@
     },
     {
       "matchManagers": ["helm-values"],
+      "matchDatasources": ["docker"],
       "matchFileNames": ["keycloak-*/bases.yml"],
       "matchUpdateTypes": ["major"],
       "enabled": false,
