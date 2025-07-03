@@ -3,7 +3,7 @@
   extends: ["github>camunda/infraex-common-config:default.json5"],
   "helm-values": {
     "managerFilePatterns": [
-      '/(^|/)base\\.ya?ml$/',
+      '/(^|/)bases\\.ya?ml$/',
     ],
   },
   "packageRules": [
