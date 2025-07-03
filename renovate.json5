@@ -33,6 +33,13 @@
         "pin"
       ]
     },
+    {
+      "matchManagers": ["helm-values"],
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["keycloak-*/bases.yml"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false,
+    },
   ],
   // TODO: integrates this into the common-config
   // we will also need to add INFRAEX_CAMUNDA_DOCKER_REGISTRY_PASSWORD
