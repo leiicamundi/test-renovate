@@ -27,7 +27,7 @@
       "matchFileNames": ["keycloak-*/bases.yml"],
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
-      "allowedVersionChange": "minor"
+      "rangeStrategy": "bump"
     },
     {
       "matchManagers": ["terraform"],
