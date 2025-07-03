@@ -8,7 +8,7 @@ sources:
         
         image:
             repository: docker.io/bitnami/keycloak
-            # renovate: versioning=regex:^(25)(?:\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?)?(:?-(?<compatibility>.+)-(?<build>\\d+)(?:-r(?<revision>\\d+))?)?$
+            # renovate: datasource=docker versioning=regex:^(25)(?:\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?)?(:?-(?<compatibility>.+)-(?<build>\\d+)(?:-r(?<revision>\\d+))?)?$
             tag: 25.0.4-debian-12-r3@sha256:77646e81a63cf05a25c59a659d10bc6d90cddd8201f8c66d89e0485c32be203b
         #name: docker.io/bitnami/keycloak:25.0.4-debian-12-r3@sha256:77646e81a63cf05a25c59a659d10bc6d90cddd8201f8c66d89e0485c32be203b
 
