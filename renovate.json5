@@ -3,6 +3,9 @@
   extends: ["github>camunda/infraex-common-config:default.json5"],
   "helm-values": {
     "enabled": true,
+        "managerFilePatterns": [
+      '/(^|/)bases\\.ya?ml$/',
+    ],
   },
   "packageRules": [
     {
@@ -19,9 +22,6 @@
       "matchManagers": ["helm-values"],
       "matchDatasources": ["docker"],
           "pinDigests": true,
-    "managerFilePatterns": [
-      '/(^|/)bases\\.ya?ml$/',
-    ],
       "groupName": "all non-major keycloak",
       "groupSlug": "all-non-major-keycloak",
       "matchFileNames": ["keycloak-*/bases.yml"],
