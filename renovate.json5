@@ -1,6 +1,55 @@
 {
-   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-   "extends": [
-      "config:recommended"
-   ]
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>camunda/infraex-common-config:default.json5"],
+  "packageRules": [
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "new major keycloak available",
+      "groupSlug": "new-major-keycloak",
+      "matchDatasources": ["docker"],
+      "matchFileNames": [".watch-latest/Dockerfile*", "keycloak-*/bases.yml"],
+      "matchUpdateTypes": ["major"],
+      "enabled": true,
+      "addLabels": ["dependencies", "docker", "hold"],
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "all non-major keycloak",
+      "groupSlug": "all-non-major-keycloak",
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["keycloak-*/Dockerfile", "keycloak-*/bases.yml"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(:?-(?<compatibility>.+)(?<build>\\d+)-r(?<revision>\\d+))?$",
+      "enabled": true,
+      "addLabels": ["dependencies", "docker"],
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["keycloak-*/Dockerfile", "keycloak-*/bases.yml"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false,
+    },
+    {
+      "matchManagers": ["terraform"],
+      "enabled": true,
+      "matchDatasources": ["terraform-provider", "terraform-module"],
+      "versioning": "hashicorp"
+    }
+  ],
+  // TODO: integrates this into the common-config
+  // we will also need to add INFRAEX_CAMUNDA_DOCKER_REGISTRY_PASSWORD
+  hostRules: [
+  ],
+  "customManagers": [
+           {
+             "customType": "regex",
+             "managerFilePatterns": ["**/bases.yaml"],
+             "matchStrings": [
+                "\\s+name: (?<depName>.*?)(?::(?<currentValue>.*?))?@(?<currentDigest>sha256:[a-f0-9]+)\\s"
+             ],
+             "datasourceTemplate": "docker",
+             "versioningTemplate": "docker",
+             "autoReplaceStringTemplate": "name: {{{depName}}}:{{{newValue}}}@{{{newDigest}}}"
+           }
+         ],
 }
