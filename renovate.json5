@@ -24,6 +24,7 @@
       "matchDatasources": ["docker"],
       "groupName": "all non-major keycloak",
       "groupSlug": "all-non-major-keycloak",
+      "matchUpdateTypes": ["minor", "patch"],
       "matchFileNames": ["keycloak-*/bases.yml"],
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
