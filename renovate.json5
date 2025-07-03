@@ -28,7 +28,6 @@
     {
       "matchManagers": ["helm-values"],
       "matchDatasources": ["docker"],
-          "pinDigests": true,
       "groupName": "all non-major keycloak",
       "groupSlug": "all-non-major-keycloak",
       "matchFileNames": ["keycloak-*/bases.yml"],
@@ -37,9 +36,8 @@
       "matchUpdateTypes": [
         "minor",
         "patch",
-        "pin"
+        "digest"
       ],
-      rangeStrategy: "bump",
     },
   ],
   // TODO: integrates this into the common-config
