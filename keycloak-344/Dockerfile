@@ -1,5 +1,5 @@
 
-ARG BASE_IMAGE_NAME="docker.io/camunda/keycloak:25.0.5"
+ARG BASE_IMAGE_NAME="docker.io/bitnami/keycloak:25.0.5"
 
 # List of all available images with associated sha: https://hub.docker.com/r/bitnami/keycloak/tags
 
