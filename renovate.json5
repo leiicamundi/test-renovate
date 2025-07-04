@@ -1,6 +1,7 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>camunda/infraex-common-config:default.json5"],
+  separateMajorMinor: false,
   "dockerfile": {
     "enabled": true,
     "managerFilePatterns": [
