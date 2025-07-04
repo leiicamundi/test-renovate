@@ -1,24 +1,13 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>camunda/infraex-common-config:default.json5"],
+  "dockerfile": {
+    "enabled": true,
+    "managerFilePatterns": [
+      '**/Dockerfile*',
+    ],
+  },
   "packageRules": [
-    {
-      "matchManagers": ["dockerfile"],
-      "groupName": "all non-major keycloak",
-      "groupSlug": "all-non-major-keycloak",
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["keycloak-*/Dockerfile"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(:?-(?<compatibility>.+)(?<build>\\d+)-r(?<revision>\\d+))?$",
-      "enabled": true,
-      "addLabels": ["dependencies", "docker"],
-    },
-    {
-      "matchManagers": ["dockerfile"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["keycloak-*/Dockerfile"],
-      "matchUpdateTypes": ["major"],
-      "enabled": false,
-    },
     {
       "matchManagers": ["dockerfile"],
       "groupName": "new major keycloak available",
@@ -28,6 +17,30 @@
       "matchUpdateTypes": ["major"],
       "enabled": true,
       "addLabels": ["dependencies", "docker", "hold"],
+    },
+    {
+      "matchManagers": ["helm-values"],
+      "groupName": "all non-major keycloak",
+      "groupSlug": "all-non-major-keycloak",
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["keycloak-*/bases.yml"],
+      "enabled": true,
+      "addLabels": ["dependencies", "docker"],
+    },
+    {
+      "matchManagers": ["helm-values"],
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["keycloak-*/bases.yml"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false,
+    },
+  ],
+  hostRules: [
+    {
+      hostType: 'docker',
+      matchHost: 'https://registry.camunda.cloud',
+      username: '{{ secrets.INFRAEX_HARBOR_REGISTRY_USERNAME }}',
+      password: '{{ secrets.INFRAEX_HARBOR_REGISTRY_PASSWORD }}',
     },
   ],
 }
