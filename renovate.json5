@@ -7,6 +7,13 @@
       '**/Dockerfile*',
     ],
   },
+  "helm-values": {
+    "enabled": true,
+    "pinDigests": true,
+    "managerFilePatterns": [
+      '/(^|/)bases\\.ya?ml$/',
+    ],
+  },
   "packageRules": [
     {
       "matchManagers": ["dockerfile"],
@@ -26,7 +33,6 @@
       "matchFileNames": ["keycloak-*/bases.yml"],
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
-      "matchUpdateTypes": ["minor", "pin", "digest", "patch"],
     },
     {
       "matchManagers": ["helm-values"],
