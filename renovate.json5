@@ -26,6 +26,7 @@
       "matchFileNames": ["keycloak-*/bases.yml"],
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
+      "matchUpdateTypes": ["minor", "pin", "digest", "patch"],
     },
     {
       "matchManagers": ["helm-values"],
