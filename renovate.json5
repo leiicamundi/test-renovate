@@ -48,7 +48,7 @@
       "groupSlug": "all-non-major-keycloak",
       "matchDatasources": ["docker"],
       "matchFileNames": ["keycloak-*/Dockerfile"],
-      "versioning": "regex:^(\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(:?-(?<compatibility>.+)(?<build>\\d+)-r(?<revision>\\d+))?$",
+      "versioning": "loose",
       "enabled": true,
       "addLabels": ["dependencies", "docker"],
     },
