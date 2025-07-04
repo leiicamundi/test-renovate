@@ -41,8 +41,14 @@
       "matchUpdateTypes": ["major"],
       "enabled": false,
     },
-
-        {
+    {
+      "matchCurrentValue": '/^(?<major>\\d+)(?:\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?)?-(?<compatibility>.+)-(?<build>\\d+)(?:-r(?<revision>\\d+))?$/',
+      matchPackagePrefixes: [
+          'bitnami/',
+          'docker.io/bitnami/',
+          'gcr.io/bitnami-containers/',
+          'registry.camunda.cloud/vendor-ee/',
+      ],
       "matchManagers": ["dockerfile"],
       "groupName": "all non-major keycloak",
       "groupSlug": "all-non-major-keycloak",
