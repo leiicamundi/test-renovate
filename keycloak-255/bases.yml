@@ -16,4 +16,4 @@ sources:
         # skopeo --override-os linux inspect docker://registry.camunda.cloud/dockerhub-infraex/bitnamiprem/keycloak:<tag> --raw | skopeo manifest-digest /dev/stdin
         image:
             repository: registry.camunda.cloud/vendor-ee/keycloak
-            tag: 25.0.5-debian-12-r0@sha256:17c14caf6e4be214f3a2f82a51b93fe6c50a12f7ed82837341d9d7b5597bc40a
+            tag: 25.0.6-debian-12-r0@sha256:f9c6583ae2b5079824b35f13ecef3ad96e90af185b8df7ae0b686e83c33e257b
