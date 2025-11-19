@@ -67,7 +67,19 @@
       matchDatasources: [
         'github-tags',
       ],
-      customDatasource: 'helm-camunda',
+      ignoreDeps: [
+        'helm/helm',
+      ],
+    },
+    {
+      // Use custom datasource for Helm version tracking
+      matchPackageNames: [
+        'helm',
+      ],
+      customType: 'regex',
+      matchDatasources: [
+        'custom.helm-camunda',
+      ],
     },
     {
       // temporarily ignoring trivy updates to stick with 0.60.0
