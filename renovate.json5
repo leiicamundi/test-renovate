@@ -283,7 +283,7 @@
       'defaultRegistryUrlTemplate': 'https://raw.githubusercontent.com/camunda/camunda-platform-helm/refs/heads/main/.tool-versions',
       'format': 'plain',
       'transformTemplates': [
-        '{\"releases\":[{\"version\": \"${{ replace \'helm \' \'\' }}\"}]}'
+        '{ "releases": $map(releases, function($v) { { "version": $replace($v.version, /^helm\\s+/, "") } }) }'
       ],
     },
   },
