@@ -60,26 +60,11 @@
   },
   packageRules: [
     {
-      // Use custom datasource for Helm version tracking
+      // Disable Helm updates from github-tags to use custom datasource instead
       matchPackageNames: [
         'helm/helm',
       ],
-      matchDatasources: [
-        'github-tags',
-      ],
-      ignoreDeps: [
-        'helm/helm',
-      ],
-    },
-    {
-      // Use custom datasource for Helm version tracking
-      matchPackageNames: [
-        'helm',
-      ],
-      customType: 'regex',
-      matchDatasources: [
-        'custom.helm-camunda',
-      ],
+      enabled: false,
     },
     {
       // temporarily ignoring trivy updates to stick with 0.60.0
@@ -310,6 +295,16 @@
     },
   },
   customManagers: [
+    {
+      // Custom manager for Helm in .tool-versions using camunda datasource
+      customType: 'regex',
+      fileMatch: ['\\.tool-versions$'],
+      matchStrings: [
+        '^helm\\s+(?<currentValue>.+)$',
+      ],
+      depNameTemplate: 'helm',
+      datasourceTemplate: 'custom.helm-camunda',
+    },
     {
       customType: 'regex',
       managerFilePatterns: [
